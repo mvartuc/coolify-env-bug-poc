@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: ./App
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - "CloudinarySettings__CloudName": ${Cloudinary__CloudName}
+      - "CloudinarySettings__ApiKey": ${Cloudinary__ApiKey}
+      - "CloudinarySettings__ApiSecret": ${Cloudinary__ApiSecret}
